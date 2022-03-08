@@ -5,13 +5,7 @@ class XScoreBoard extends KFScoreBoardNew;
 
 var localized string FPText,SCText,HuskText, KillAssistsSeparator;
 var localized string NotShownInfo,PlayerCountText,SpectatorCountText,AliveCountText,BotText;
-var Color WhiteColor;
-var Color GrayColor;
-var Color DarkGrayColor;
-var Color DodgerBlueColor;
-var Color YellowColor;
-var Color OrangeColor;
-var Color OrangeRedColor;
+var Color WhiteColor,GrayColor,DarkGrayColor,DodgerBlueColor,YellowColor,OrangeColor,OrangeRedColor;
 
 struct ColorRecord
 {
@@ -23,7 +17,6 @@ var config array<ColorRecord> ColorList;
 var array<string> colorCodes;
 var bool bMadeColorCodes;
 var string PN;
-
 
 function string GetDateString()
 {
@@ -586,11 +579,11 @@ simulated event UpdateScoreBoard(Canvas Canvas)
        	Canvas.DrawColor = HUDClass.default.WhiteColor;
 		
 		// draw cash
-		CashString = "£"@string(int(TeamPRIArray[i].Score)) ;
+		CashString = "Â£"@string(int(TeamPRIArray[i].Score)) ;
 
 		if(TeamPRIArray[i].Score >= 1000)
 		{
-			CashString = "£"@string(TeamPRIArray[i].Score/1000.f)$"K" ;
+			CashString = "Â£"@string(TeamPRIArray[i].Score/1000.f)$"K" ;
 		}
 
 		Canvas.StrLen(CashString,CashX,YL);
