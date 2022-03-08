@@ -39,16 +39,12 @@ function bool CheckReplacement(Actor Other, out byte bSuperRelevant)
 	return true;
 }
 
-
-
-
-
 defaultproperties
 {
      bAddToServerPackages=True
-     GroupName="KF-XScoreBoardMut"
+     GroupName="KF-XScoreBoard"
      FriendlyName="XScoreBoardMut"
-     Description="XScoreBoardMut, Show Husk, Scrake, Fleshpound Kill stats and current date, time, votingOption"
+     Description="XScoreBoardMut V2 by The0neThe0nly; Show Husk, Scrake, Fleshpound Kill stats; Show current Date, Time, votingOption; Replace custom Perkicons; Remove perk level star and replace it to pure digit."
      bAlwaysRelevant=True
      RemoteRole=ROLE_SimulatedProxy
 }
