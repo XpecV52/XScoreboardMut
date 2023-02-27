@@ -1,6 +1,6 @@
 class XScoreBoard extends KFScoreBoardNew;
 
-
+// import Textures files deployment
 #exec OBJ LOAD FILE="X_VetIcon.utx" Package="XScoreBoardMut"
 
 var localized string FPText,SCText,HuskText, KillAssistsSeparator;
@@ -18,6 +18,10 @@ var array<string> colorCodes;
 var bool bMadeColorCodes;
 var string PN;
 
+
+/*
+initialize the date formate
+*/
 function string GetDateString()
 {
     local string DateString;
@@ -79,6 +83,9 @@ function string GetDateString()
     return DateString;
 }
 
+/*
+initialize game difficulty
+*/
 function string GetGameDifficulty()
 {   
     switch(KFGameReplicationInfo(Level.GRI).GameDiff)
@@ -104,7 +111,9 @@ function string GetGameDifficulty()
     }
 }
 
-
+/*
+get custom game votingOptions
+*/
 function string GetGameAcronym()
 {
 	if(GRI != none && XScoreBoardGameReplicationInfo(GRI).ReplicatedGameConfigAcronym != "")
@@ -118,7 +127,9 @@ function string GetGameAcronym()
 }
 
 
-
+/*
+canvas scoreboard's headTitle
+*/
 function DrawTitle(Canvas Canvas, float HeaderOffsetY, float PlayerAreaY, float PlayerBoxSizeY)
 {
     local string CurrentGameString, CurrentDateString, CurrentDiffString, CurrentVoteString, ScoreInfoString, RestartString;
